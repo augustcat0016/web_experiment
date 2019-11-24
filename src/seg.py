@@ -2,6 +2,8 @@ import jieba
 import pandas as pd
 import pickle
 import numpy as np
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import CountVectorizer
 
 
 def test_data():
@@ -42,10 +44,15 @@ if __name__ == '__main__':
 
     with open('./content_seg.o', 'rb') as r:
         content_seg = pickle.load(r)
-    print(len(content_seg))
+    print(content_seg)
 
     # test_querys()
 
-    # with open('./querys_seg.o', 'rb') as r:
-    #     title_seg = pickle.load(r)
-    # print(title_seg)
+    with open('./querys_seg.o', 'rb') as r:
+        title_seg = pickle.load(r)
+    print(title_seg)
+
+    corpus = content_seg + title_seg
+    print(len(corpus))
+    with open('./corpus.o', 'wb') as p:
+        pickle.dump(corpus, p)
