@@ -1,9 +1,6 @@
 import jieba
 import pandas as pd
 import pickle
-import numpy as np
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.feature_extraction.text import CountVectorizer
 
 
 def test_data():
