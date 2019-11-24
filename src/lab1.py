@@ -5,8 +5,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.preprocessing import normalize
 #read csv
-querys = pd.read_csv("test_querys.csv")
-docs = pd.read_csv("test_docs.csv")
+querys = pd.read_csv("../data/test_querys.csv")
+docs = pd.read_csv("../data/test_docs.csv")
 querys = querys.astype(str)
 docs = docs.astype(str)
 
